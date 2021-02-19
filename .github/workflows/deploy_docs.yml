@@ -6,22 +6,22 @@ on:
 
 jobs:
   docs:
-    name: publish docs
+    name: Publish docs
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: set up Python runtime
+      - name: Set up runtime
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
 
-      - name: install dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: publish docs
+      - name: Publish docs
         run: |
           mkdocs gh-deploy
