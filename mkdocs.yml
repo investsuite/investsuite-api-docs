@@ -1,0 +1,95 @@
+# Project information
+site_name: InvestSuite API Documentation
+site_url: https://api.investsuite.com/docs
+site_author: InvestSuite
+site_description: >-
+  The InvestSuite API is the one-stop shop for integrations with InvestSuite's
+  range of invest-tech solutions. These pages provide technical documentation to
+  assist developers working with our APIs.
+
+# Docs repository
+repo_name: View/Edit on GitHub
+repo_url: https://github.com/investsuite/investsuite-api-docs
+edit_uri: ""  # this config hides the default edit option on pages
+
+# Copyright
+copyright: Copyright &copy; 2021 InvestSuite
+
+# MkDocs config
+theme:
+  name: material
+  custom_dir: overrides
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  palette:
+    scheme: investsuite
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: en
+  icon:
+    repo: fontawesome/solid/book
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+
+# Social links
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://www.investsuite.com/
+    - icon: fontawesome/solid/envelope
+      link: mailto:hello@investsuite.com
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/investsuite
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/investsuite
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/investsuite
+
+# Add custom css
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - meta
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - codehilite:
+      guess_lang: False
+
+plugins:
+  - search:
+      lang: en
+  # - git-revision-date-localized:
+  #     type: timeago
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Introduction: introduction.md
+    - First steps: first_steps.md
+    - Creating and managing users: users.md
+    - Exploring resources: resources.md
+  - Advanced Topics:
+    - Next steps: next_steps.md
+    - Data formats: data_formats.md
+    - Handling collection responses: collections.md
+    - API errors and how to handle them: errors.md
+    - Debugging tips and tricks: debugging.md
+    - Rate limiting: rate_limiting.md
+    - Idempotency: idempotency.md
+    - Expanding resource objects: expanding.md
+    - Asynchronous operations: async.md
+  - Changelog: changelog.md
+  - About: about.md
