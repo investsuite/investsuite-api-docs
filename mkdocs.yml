@@ -66,30 +66,31 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.superfences
   - codehilite:
-      guess_lang: False
+      guess_lang: false
 
 plugins:
   - search:
       lang: en
+  - git-info
   # - git-revision-date-localized:
   #     type: timeago
 
 nav:
   - Home: index.md
   - Getting Started:
-    - Introduction: introduction.md
-    - First steps: first_steps.md
-    - Creating and managing users: users.md
-    - Exploring resources: resources.md
+    - Introduction: getting_started/introduction.md
+    - First steps: getting_started/first_steps.md
+    - Creating and managing users: getting_started/users.md
+    - Exploring resources: getting_started/resources.md
   - Advanced Topics:
-    - Next steps: next_steps.md
-    - Data formats: data_formats.md
-    - Handling collection responses: collections.md
-    - API errors and how to handle them: errors.md
-    - Debugging tips and tricks: debugging.md
-    - Rate limiting: rate_limiting.md
-    - Idempotency: idempotency.md
-    - Expanding resource objects: expanding.md
-    - Asynchronous operations: async.md
+    - Next steps: advanced_topics/next_steps.md
+    - Data formats: advanced_topics/data_formats.md
+    - Handling collection responses: advanced_topics/collections.md
+    - API errors and how to handle them: advanced_topics/errors.md
+    - Debugging tips and tricks: advanced_topics/debugging.md
+    - Rate limiting: advanced_topics/rate_limiting.md
+    - Idempotency: advanced_topics/idempotency.md
+    - Embedding Additional Entities in API Responses: advanced_topics/embedding.md
+    - Asynchronous operations: advanced_topics/async.md
   - Changelog: changelog.md
   - About: about.md
