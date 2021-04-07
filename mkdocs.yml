@@ -71,9 +71,8 @@ markdown_extensions:
 plugins:
   - search:
       lang: en
-  - git-info
-  # - git-revision-date-localized:
-  #     type: timeago
+  - git-revision-date-localized:
+      type: timeago
 
 nav:
   - Home: index.md
@@ -90,7 +89,7 @@ nav:
     - Debugging tips and tricks: advanced_topics/debugging.md
     - Rate limiting: advanced_topics/rate_limiting.md
     - Idempotency: advanced_topics/idempotency.md
-    - Embedding Additional Entities in API Responses: advanced_topics/embedding.md
+    - Embedding: advanced_topics/embedding.md
     - Asynchronous operations: advanced_topics/async.md
   - Changelog: changelog.md
   - About: about.md
