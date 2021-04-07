@@ -15,7 +15,7 @@ Suppose an API client requires both data for a specific portfolio (`P01234567890
 
 === "Request"
 
-    ```HTTP
+    ```HTTP hl_lines="1"
     GET /portfolios/P01234567890123456789012345 HTTP/1.1
     Host: api.investsuite.com
     Accept: application/json
@@ -49,7 +49,7 @@ And then uses the `owned_by_user_id` field (`U01234567890123456789012345`) in th
 
 === "Request"
 
-    ```HTTP
+    ```HTTP hl_lines="1"
     GET /users/U01234567890123456789012345 HTTP/1.1
     Host: api.investsuite.com
     Accept: application/json
