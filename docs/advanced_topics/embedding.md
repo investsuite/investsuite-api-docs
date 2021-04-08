@@ -5,7 +5,9 @@
 
 ## Introduction
 
-The InvestSuite API supports optional embedding of entities by `EntityID`, a feature which is loosely based on [Zalando's RESTful API Performance Guideline #158](https://opensource.zalando.com/restful-api-guidelines/#158). Embedding enables API clients to merge referenced entities directly into a single response, which reduces the amount of (sequential) round trips required to fetch data from InvestSuite's backend. This feature is particularly convenient in use cases where data from multiple entities is joined together, a common operation when preparing data for reporting purposes or in specific front end views.
+The InvestSuite API supports optional embedding of entities by `EntityID`, a feature which is based[^1] on [Zalando's RESTful API Performance Guideline #158](https://opensource.zalando.com/restful-api-guidelines/#158). Embedding enables API clients to merge referenced entities directly into a single response, which reduces the amount of (sequential) round trips required to fetch data from InvestSuite's backend. This feature is particularly convenient in use cases where data from multiple entities is joined together, a common operation when preparing data for reporting purposes or in specific front end views.
+
+[^1]: Zalando's guidelines include an example of embedding a _sub-resource_ into the response. The InvestSuite API supports embedding any referenced entity (which does not necessarily have to be a sub-resource of the requested entity).
 
 In order to embed certain field(s), the `?embed=` query string parameter needs to be provided in `GET` requests. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with an `_embedded` key at the root level, which contains a full rendition of the referenced entities. This provides a useful level of flexibility in API responses, allowing clients to directly retrieve related data with a single request.
 

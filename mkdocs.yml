@@ -67,6 +67,7 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       guess_lang: false
+  - footnotes
 
 plugins:
   - search:
