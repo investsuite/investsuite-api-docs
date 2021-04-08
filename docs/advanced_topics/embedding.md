@@ -87,7 +87,7 @@ And then uses the `owned_by_user_id` field (`U01234567890123456789012345`) in th
 !!! Note
     In this example, unless the client already knows the `UserID` of the owner for this portfolio, the requests will by definition always be sequential because the required path parameter for the requests to `/users/` is not known until the first response is received.
 
-With embedding, both requests can be rolled into a single operation, which adds the `_embedded` key to the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced `EntityID` and the value is the data for that entity (in this case a user). The client can now directly parse the information for the `UserID` appearing in the `owned_by_used_id` field from the `_embedded` object.
+With embedding, both requests can be rolled into a single operation, which adds the `_embedded` key to the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced `EntityID`s and the value is the data for that entity (in this case a user object). The client can now directly parse the information for the `UserID` appearing in the `owned_by_used_id` field from the `_embedded` object without having to perform a subsequent request to `/users/`.
 
 === "Request"
 
