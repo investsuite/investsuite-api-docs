@@ -9,6 +9,13 @@ The InvestSuite API supports optional embedding of entities by `EntityID`, a fea
 
 In order to embed certain field(s), the `?embed=` query string parameter needs to be provided in `GET` requests. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with an `_embedded` key at the root level, which contains a full rendition of the referenced entities. This provides a useful level of flexibility in API responses, allowing clients to directly retrieve related data with a single request.
 
+!!! Hint
+    Embedding works for any response field value that is an (array of) `EntityID`s, which can be recognized by the globally-unique identifier that follows below regex (such as a `UserID` like `U01234567890123456789012345`). This regex translates to a single alphabet letter identifying the type of entity, followed by a 26-character ULID based on Crockford’s base32 character set.
+
+    ```
+    ^[A-Z][0-9A-HJKMNP-TV-Z]{26}$
+    ```
+
 ## Example with a single entity
 
 Suppose an API client requires both data for a specific portfolio (`P01234567890123456789012345`) _and_ data for the user that owns this particular portfolio. Without embedding, this would be a sequential two-step process, where the client first retrieves the portfolio in question:
@@ -80,7 +87,7 @@ And then uses the `owned_by_user_id` field (`U01234567890123456789012345`) in th
 !!! Note
     In this example, unless the client already knows the `UserID` of the owner for this portfolio, the requests will by definition always be sequential because the required path parameter for the requests to `/users/` is not known until the first response is received.
 
-With embedding, both requests can be 'rolled' into a single operation, which adds the `_embedded` key to the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced `EntityID` and the value is the data for that entity (in this case a user). The client can now directly parse the information for the `UserID` appearing in the `owned_by_used_id` field from the `_embedded` object.
+With embedding, both requests can be rolled into a single operation, which adds the `_embedded` key to the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced `EntityID` and the value is the data for that entity (in this case a user). The client can now directly parse the information for the `UserID` appearing in the `owned_by_used_id` field from the `_embedded` object.
 
 === "Request"
 
@@ -130,4 +137,3 @@ With embedding, both requests can be 'rolled' into a single operation, which add
         }
     }
     ```
-
