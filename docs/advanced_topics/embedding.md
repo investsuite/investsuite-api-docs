@@ -1,8 +1,6 @@
-# Embedding Additional Entities in API Responses
-
-??? Summary
-    Embedding of referenced resources can be achieved using the `?embed=` query string parameter, which adds referenced entities to the response field `_embedded` at the root of the response object. The `_embedded` object contains the data for the referenced entities, organized by `EntityID`.
-
+---
+title: Embedding Additional Entities in API Responses
+---
 
 ## Introduction
 
