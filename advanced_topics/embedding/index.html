@@ -1,0 +1,1080 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The InvestSuite API is the one-stop shop for integrations with InvestSuite's range of invest-tech solutions. These pages provide technical documentation to assist developers working with our APIs.">
+      
+      
+      
+        <meta name="author" content="InvestSuite">
+      
+      
+        <link rel="canonical" href="https://api.investsuite.com/docs/advanced_topics/embedding/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Embedding Additional Entities in API Responses - InvestSuite API Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="InvestSuite API Documentation - Embedding">
+<meta property="og:description" content="The InvestSuite API is the one-stop shop for integrations with InvestSuite's range of invest-tech solutions. These pages provide technical documentation to assist developers working with our APIs.">
+<meta property="og:url" content="https://api.investsuite.com/docs/advanced_topics/embedding/">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="investsuite" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="InvestSuite API Documentation" class="md-header__button md-logo" aria-label="InvestSuite API Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            InvestSuite API Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Embedding Additional Entities in API Responses
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/investsuite/investsuite-api-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View/Edit on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting_started/introduction/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../next_steps/" class="md-tabs__link md-tabs__link--active">
+        Advanced Topics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../changelog/" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="InvestSuite API Documentation" class="md-nav__button md-logo" aria-label="InvestSuite API Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    InvestSuite API Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/investsuite/investsuite-api-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View/Edit on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/first_steps/" class="md-nav__link">
+        First steps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/users/" class="md-nav__link">
+        Creating and managing users
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/resources/" class="md-nav__link">
+        Exploring resources
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Advanced Topics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced Topics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced Topics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../next_steps/" class="md-nav__link">
+        Next steps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_formats/" class="md-nav__link">
+        Data formats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/" class="md-nav__link">
+        Handling collection responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        API errors and how to handle them
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        Debugging tips and tricks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rate_limiting/" class="md-nav__link">
+        Rate limiting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../idempotency/" class="md-nav__link">
+        Idempotency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Embedding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Embedding
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-embedded-entity" class="md-nav__link">
+    Single embedded entity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-embedded-entities" class="md-nav__link">
+    Multiple embedded entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-with-collections" class="md-nav__link">
+    Embedding with collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-a-reference-to-a-list-of-entities" class="md-nav__link">
+    Embedding a reference to a list of entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../async/" class="md-nav__link">
+        Asynchronous operations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+    
+        <h1>Embedding Additional Entities in API Responses</h1>
+    
+    <div class="md-source-date">
+        <small>
+            
+            Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits" class="timeago" datetime="2021-05-11 08:15:27 UTC">2021-05-11 08:15:27 UTC</a>
+            &nbsp;&nbsp;&nbsp;
+            ~13&nbsp;minute&nbsp;read
+            <br>
+            <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/embedding.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/embedding.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits">1&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
+            
+        </small>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    <script>timeago.render(document.querySelectorAll('.timeago'));</script>
+    <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>The InvestSuite API supports optional embedding of entities by <code>EntityID</code>, a feature which is modeled after<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <a href="https://opensource.zalando.com/restful-api-guidelines/#158">Zalando's RESTful API Performance Guideline #158</a>. Embedding enables API clients to merge referenced entities directly into a single response, which reduces the amount of (sequential) round trips required to fetch data from InvestSuite's backend. This feature is particularly convenient in use cases where data from multiple entities is joined together, a common operation when preparing data for reporting purposes or in specific front end views.</p>
+<p>In order to embed certain field(s), the <code>?embed=</code> query string parameter needs to be provided in <code>GET</code> requests. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with an <code>_embedded</code> key at the root level, which contains a full rendition of the referenced entities (if the accessing user has read privileges on the referenced entity). This provides a useful level of flexibility in API responses, allowing clients to directly retrieve related data with a single request.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Embedding works for any response field value that is an (array of) <code>EntityID</code>s, which can be recognized by the globally-unique identifier that follows below regex (such as a <code>UserID</code> like <code>U01234567890123456789012345</code>). This regex translates to a single alphabet letter identifying the type of entity, followed by a 26-character ULID based on the Crockford base32 character set.</p>
+<div class="highlight"><pre><span></span><code>^[A-Z][0-9A-HJKMNP-TV-Z]{26}$
+</code></pre></div>
+</div>
+<h2 id="single-embedded-entity">Single embedded entity<a class="headerlink" href="#single-embedded-entity" title="Permanent link">&para;</a></h2>
+<p>Suppose an API client requires both data for a specific portfolio (<code>P01234567890123456789012345</code>) <em>and</em> data for the user that owns this particular portfolio. Without embedding, this would be a sequential two-step process, where the client first retrieves the portfolio in question:</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/portfolios/P01234567890123456789012345</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_portfolio_id&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Portfolio&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;owned_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;portfolio&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="err">...</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>And then uses the <code>owned_by_user_id</code> field value (<code>U01234567890123456789012345</code>) in the response to query data for the owner, who turns out the be <code>John Doe</code>:</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/users/U01234567890123456789012345</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_user_id&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;john_doe@example.com&quot;</span><span class="p">,</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this example, unless the client already knows the <code>UserID</code> of the owner for this portfolio, the requests will by definition always be sequential because the required path parameter for the requests to <code>/users/</code> is not known until the first response is received.</p>
+</div>
+<p>With embedding, both requests can be rolled into a <strong>single operation</strong>, which adds the referenced entities to the <code>_embedded</code> key at the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced <code>EntityID</code>s and the value is the data for that entity (in this case a user object). The client can now directly parse the information for the <code>UserID</code> appearing in the <code>owned_by_used_id</code> field from the <code>_embedded</code> object without having to perform a subsequent request to <code>/users/</code>.</p>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/portfolios/P01234567890123456789012345?embed=owned_by_user_id</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_portfolio_id&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Portfolio&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;owned_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;portfolio&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="err">...</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">        <span class="nt">&quot;U01234567890123456789012345&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>            <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_user_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;john_doe@example.com&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The amount of 'work' required to retrieve data can be significantly reduced on both sides if embedding is used cleverly. In the above example, the number of requests required from the client is cut in half, which speeds up the interaction considerably. At the same time, API resources are used efficiently, as the amount of per-request overhead can be avoided.</p>
+</div>
+<h2 id="multiple-embedded-entities">Multiple embedded entities<a class="headerlink" href="#multiple-embedded-entities" title="Permanent link">&para;</a></h2>
+<p>For the next example, assume that the client requires a portfolio, the owner of the portfolio, <em>and</em> the user that updated the portfolio most recently. This can be achieved by adding <strong>multiple response fields</strong> to the <code>embed=</code> param, separated by commas:</p>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/portfolios/P01234567890123456789012345?embed=owned_by_user_id,version_authored_by_user_id</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_portfolio_id&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Portfolio&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;owned_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;portfolio&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="err">...</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="err">...</span>
+<span class="hll">    <span class="nt">&quot;version_authored_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">        <span class="nt">&quot;U01234567890123456789012345&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>            <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_user_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;john_doe@example.com&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this case, the referenced entity comes up twice: both as the owner of the portfolio and as the author of the most recent version. As a result, the <code>_embedded</code> object only contains a single object. This helps to further reduce repeated queries and unnecessary overhead.</p>
+</div>
+<h2 id="embedding-with-collections">Embedding with collections<a class="headerlink" href="#embedding-with-collections" title="Permanent link">&para;</a></h2>
+<p>Similar to single-entity responses, collections support embedding as well. If embedding is requested, the <code>_embedded</code> object will contain referenced entities for <strong>all objects returned in the collection</strong>. For instance, a client can request a list of 10 portfolios and directly embed the owners of all these portfolios. This is particularly useful when creating front-end views or collecting data for reporting purposes where multiple entities need to be joined together in bulk. This process also reduces overhead on the server side: 1 query to retrieve portfolios, and 1 query to filter for the list of users is a lot more efficient than requesting these entities sequentially from the client side.</p>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/portfolios/?embed=owned_by_user_id&amp;limit=10</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;http://api.investsuite.com/portfolios/?embed=owned_by_user_id&amp;limit=10&amp;offset=P01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="s2">&quot;P01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;owned_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P01234567890123456789012345&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;owned_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U98765432109876543210987654&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P98765432109876543210987654&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">},</span>
+        <span class="err">...</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">        <span class="nt">&quot;U01234567890123456789012345&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>            <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">},</span>
+<span class="hll">        <span class="nt">&quot;U98765432109876543210987654&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>            <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">},</span>
+        <span class="err">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="embedding-a-reference-to-a-list-of-entities">Embedding a reference to a list of entities<a class="headerlink" href="#embedding-a-reference-to-a-list-of-entities" title="Permanent link">&para;</a></h2>
+<p>Finally, it is also possible to embed not just a single referenced entity, but an array pointing at multiple entity IDs. The <code>readable_by</code> and <code>modifiable_by</code> arrays in the standard entity response are a good example, as these can contain references to multiple (different) entities, such as users and user groups. Suppose the requirement is to retrieve all users that have read access to a certain portfolio, which again can be achieved with a single request. In the below response, user <code>Jane</code> has view-only permissions to the portfolio of <code>John</code>, who is the owner and has both read and write permissions:</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/portfolios/P01234567890123456789012345?embed=readable_by</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="hll">        <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+</span><span class="hll">        <span class="s2">&quot;U98765432109876543210987654&quot;</span><span class="p">,</span>
+</span>    <span class="p">],</span>
+    <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;U01234567890123456789012345&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;my_external_portfolio_id&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Portfolio&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;owned_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;U01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;portfolio&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="err">...</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;P01234567890123456789012345&quot;</span><span class="p">,</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">        <span class="nt">&quot;U01234567890123456789012345&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>            <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">},</span>
+<span class="hll">        <span class="nt">&quot;U98765432109876543210987654&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>            <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<div class="admonition faq">
+<p class="admonition-title">What common errors can be encountered when working with embedding?</p>
+<p>The API will throw helpful error messages when the requested embedding could not be completed successfully, indicating the location of the error (<code>loc</code>, pointing at <code>query</code>, parameter: <code>embed</code>), and a human-readable error message with a reference to the received value.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Bad request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;query&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;embed&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;field &#39;not_an_existing_field&#39; not found in this entity&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;value_error.exception&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">400</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In case a field is requested that that cannot be embedded (i.e. a field that is not a reference to another entity), the error message will be:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;field &#39;first_name&#39; cannot be embedded&quot;</span>
+</code></pre></div>
+</div>
+<div class="admonition faq">
+<p class="admonition-title">What happens if the requesting user does not have access to the embedded entity?</p>
+<p>Read and write permissions are controlled by the <code>readable_by</code> and <code>modifiable_by</code> arrays on each entity respectively. If the requesting user does not have the right permissions (in this case, its ID is not in the <code>readable_by</code> list on the referenced entity), an error will be thrown. Note that the error references the <em>embedded entity</em>, which is another user in the below example. This could be slightly confusing when the original request was for a different entity such as a portfolio, but the error indicates lack of read access to a user.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Access forbidden&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;User U01234567890123456789012345 does not have READ access on U98765432109876543210987654 (version=latest)&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">403</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The Zalando guidelines include an example of embedding a <em>sub-resource</em> into the response. The InvestSuite API supports embedding of any referenced entity (which does not necessarily have to be a sub-resource of the requested entity).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../idempotency/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Idempotency
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../async/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Asynchronous operations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 InvestSuite
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.investsuite.com/" target="_blank" rel="noopener" title="www.investsuite.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:hello@investsuite.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/investsuite" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/company/investsuite" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://instagram.com/investsuite" target="_blank" rel="noopener" title="instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+      
+    
+  </body>
+</html>
