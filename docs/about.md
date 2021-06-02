@@ -1,3 +1,4 @@
-# About InvestSuite API
+---
+title: About the InvestSuite API
+---
 
-Some guiding text on the reason we have this API and what our clients do with it.

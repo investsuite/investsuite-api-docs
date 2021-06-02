@@ -1,1 +1,5 @@
-# Getting Started with the InvestSuite API
+---
+title: Introduction
+---
+
+## Welcome to the InvestSuite API Docs

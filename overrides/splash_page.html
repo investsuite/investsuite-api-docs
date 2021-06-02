@@ -1,0 +1,18 @@
+<style>.mdx-hero{width: 600px; margin-left: 5rem;} .md-sidebar{display: none;}</style>
+
+<section class="mdx-container">
+    <div class="md-grid md-typeset">
+      <div class="mdx-hero">
+        <div class="mdx-hero__content">
+          <h1>Welcome to the InvestSuite API Documentation</h1>
+          <p>{{ config.site_description }}</p>
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
+            Quick start
+          </a>
+          <a href="{{ 'about/' | url }}" title="About the InvestSuite API" class="md-button">
+            About the API
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>

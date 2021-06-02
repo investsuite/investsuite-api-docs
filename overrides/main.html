@@ -15,22 +15,9 @@
     {% if not "\x3ch1" in page.content %}
         <h1>{{ page.meta.title | d(page.title) | d(config.site_name, true)}}</h1>
     {% endif %}
-    <div class="md-source-date">
-        <small>
-            {% if page.edit_url and git_info %}
-            Last update: <a href="{{ page.edit_url | replace('blob', 'commits')}}" title="Show commits" class="timeago" datetime="{{ git_info['last_updated_long'] }} UTC">{{ git_info['last_updated_long'] }} UTC</a>
-            &nbsp;&nbsp;&nbsp;
-            ~{{ (((page.content|length)/10/250)+1)|int }}&nbsp;minute&nbsp;read
-            <br>
-            <a href="{{ page.edit_url }}" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="{{ page.edit_url | replace('blob', 'blame')}}" title="Show blame">{{ git_info['number_authors'] }}&nbsp;author{% if git_info['number_authors'] > 1 %}s{% endif %}&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="{{ page.edit_url | replace('blob', 'commits')}}" title="Show commits">{{ git_info['number_commits'] }}&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
-            {% endif %}
-        </small>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
-    <script>timeago.render(document.querySelectorAll('.timeago'));</script>
-    {{ page.content }}
+    {% if page.title == "Home" %}
+        {% include "splash_page.html" %}
+    {% else %}
+        {% include "article.html" %}
+    {% endif %}
 {% endblock %}
