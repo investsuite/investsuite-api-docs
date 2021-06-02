@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      
+      - name: Fetch repository
         run: git fetch --prune --unshallow
 
       - name: Set up runtime
