@@ -20,7 +20,7 @@
     
     
       
-        <title>API errors and how to handle them - InvestSuite API Documentation</title>
+        <title>A closer look at API errors - InvestSuite API Documentation</title>
       
     
     
@@ -53,7 +53,7 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="InvestSuite API Documentation - API errors and how to handle them">
+<meta property="og:title" content="InvestSuite API Documentation - A closer look at API errors">
 <meta property="og:description" content="The InvestSuite API is the one-stop shop for integrations with InvestSuite's range of invest-tech solutions. These pages provide technical documentation to assist developers working with our APIs.">
 <meta property="og:url" content="https://api.investsuite.com/docs/advanced_topics/errors/">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
@@ -75,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#errors-happen" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -101,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API errors and how to handle them
+              A closer look at API errors
             
           </span>
         </div>
@@ -356,18 +361,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting_started/resources/" class="md-nav__link">
-        Exploring resources
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -417,18 +410,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_formats/" class="md-nav__link">
-        Data formats
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../collections/" class="md-nav__link">
         Handling collection responses
       </a>
@@ -448,46 +429,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A closer look at API errors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        API errors and how to handle them
+        A closer look at API errors
       </a>
       
-    </li>
-  
-
-          
-            
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <li class="md-nav__item">
-      <a href="../debugging/" class="md-nav__link">
-        Debugging tips and tricks
-      </a>
-    </li>
   
-
-          
-            
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#errors-happen" class="md-nav__link">
+    Errors happen
+  </a>
   
+</li>
+      
+    </ul>
   
-  
-    <li class="md-nav__item">
-      <a href="../rate_limiting/" class="md-nav__link">
-        Rate limiting
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../idempotency/" class="md-nav__link">
-        Idempotency
-      </a>
+</nav>
+      
     </li>
   
 
@@ -499,18 +472,6 @@
     <li class="md-nav__item">
       <a href="../embedding/" class="md-nav__link">
         Embedding
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../async/" class="md-nav__link">
-        Asynchronous operations
       </a>
     </li>
   
@@ -564,25 +525,27 @@
             <article class="md-content__inner md-typeset">
               
     
-        <h1>API errors and how to handle them</h1>
+        <h1>A closer look at API errors</h1>
     
-    <div class="md-source-date">
-        <small>
-            
-            Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/errors.md" title="Show commits" class="timeago" datetime="2021-04-07 20:49:15 UTC">2021-04-07 20:49:15 UTC</a>
-            &nbsp;&nbsp;&nbsp;
-            ~1&nbsp;minute&nbsp;read
-            <br>
-            <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/errors.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/errors.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/errors.md" title="Show commits">1&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
-            
-        </small>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
-    <script>timeago.render(document.querySelectorAll('.timeago'));</script>
+    
+        <div class="md-source-date">
+    <small>
+        
+        Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/errors.md" title="Show commits" class="timeago" datetime="2021-06-02 14:16:38 UTC">2021-06-02 14:16:38 UTC</a>
+        &nbsp;&nbsp;&nbsp;
+        ~1&nbsp;minute&nbsp;read
+        <br>
+        <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/errors.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/errors.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/errors.md" title="Show commits">2&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
+        
+    </small>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+<script>timeago.render(document.querySelectorAll('.timeago'));</script>
+<h2 id="errors-happen">Errors happen<a class="headerlink" href="#errors-happen" title="Permanent link">&para;</a></h2>
     
 
               
@@ -616,13 +579,13 @@
         </a>
       
       
-        <a href="../debugging/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../embedding/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Debugging tips and tricks
+              Embedding
             </div>
           </div>
           <div class="md-footer__button md-icon">

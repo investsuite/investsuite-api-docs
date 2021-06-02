@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#collection-response-format" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -356,18 +361,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting_started/resources/" class="md-nav__link">
-        Exploring resources
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -415,18 +408,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../data_formats/" class="md-nav__link">
-        Data formats
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -436,9 +417,37 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Handling collection responses
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Handling collection responses
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#collection-response-format" class="md-nav__link">
+    Collection response format
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -450,43 +459,7 @@
   
     <li class="md-nav__item">
       <a href="../errors/" class="md-nav__link">
-        API errors and how to handle them
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../debugging/" class="md-nav__link">
-        Debugging tips and tricks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rate_limiting/" class="md-nav__link">
-        Rate limiting
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../idempotency/" class="md-nav__link">
-        Idempotency
+        A closer look at API errors
       </a>
     </li>
   
@@ -499,18 +472,6 @@
     <li class="md-nav__item">
       <a href="../embedding/" class="md-nav__link">
         Embedding
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../async/" class="md-nav__link">
-        Asynchronous operations
       </a>
     </li>
   
@@ -566,23 +527,25 @@
     
         <h1>Handling collection responses</h1>
     
-    <div class="md-source-date">
-        <small>
-            
-            Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/collections.md" title="Show commits" class="timeago" datetime="2021-04-07 20:49:15 UTC">2021-04-07 20:49:15 UTC</a>
-            &nbsp;&nbsp;&nbsp;
-            ~1&nbsp;minute&nbsp;read
-            <br>
-            <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/collections.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/collections.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/collections.md" title="Show commits">1&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
-            
-        </small>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
-    <script>timeago.render(document.querySelectorAll('.timeago'));</script>
+    
+        <div class="md-source-date">
+    <small>
+        
+        Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/collections.md" title="Show commits" class="timeago" datetime="2021-06-02 14:16:38 UTC">2021-06-02 14:16:38 UTC</a>
+        &nbsp;&nbsp;&nbsp;
+        ~1&nbsp;minute&nbsp;read
+        <br>
+        <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/collections.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/collections.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/collections.md" title="Show commits">2&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
+        
+    </small>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+<script>timeago.render(document.querySelectorAll('.timeago'));</script>
+<h2 id="collection-response-format">Collection response format<a class="headerlink" href="#collection-response-format" title="Permanent link">&para;</a></h2>
     
 
               
@@ -601,7 +564,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../data_formats/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../next_steps/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -610,7 +573,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Data formats
+              Next steps
             </div>
           </div>
         </a>
@@ -622,7 +585,7 @@
               <span class="md-footer__direction">
                 Next
               </span>
-              API errors and how to handle them
+              A closer look at API errors
             </div>
           </div>
           <div class="md-footer__button md-icon">

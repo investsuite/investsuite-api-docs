@@ -16,15 +16,7 @@
      <lastmod>2021-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://api.investsuite.com/docs/getting_started/resources/</loc>
-     <lastmod>2021-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://api.investsuite.com/docs/advanced_topics/next_steps/</loc>
-     <lastmod>2021-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://api.investsuite.com/docs/advanced_topics/data_formats/</loc>
      <lastmod>2021-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -36,23 +28,7 @@
      <lastmod>2021-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://api.investsuite.com/docs/advanced_topics/debugging/</loc>
-     <lastmod>2021-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://api.investsuite.com/docs/advanced_topics/rate_limiting/</loc>
-     <lastmod>2021-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://api.investsuite.com/docs/advanced_topics/idempotency/</loc>
-     <lastmod>2021-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://api.investsuite.com/docs/advanced_topics/embedding/</loc>
-     <lastmod>2021-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://api.investsuite.com/docs/advanced_topics/async/</loc>
      <lastmod>2021-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>

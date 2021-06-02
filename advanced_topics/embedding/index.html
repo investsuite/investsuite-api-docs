@@ -361,18 +361,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting_started/resources/" class="md-nav__link">
-        Exploring resources
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -422,18 +410,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_formats/" class="md-nav__link">
-        Data formats
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../collections/" class="md-nav__link">
         Handling collection responses
       </a>
@@ -447,43 +423,7 @@
   
     <li class="md-nav__item">
       <a href="../errors/" class="md-nav__link">
-        API errors and how to handle them
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../debugging/" class="md-nav__link">
-        Debugging tips and tricks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rate_limiting/" class="md-nav__link">
-        Rate limiting
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../idempotency/" class="md-nav__link">
-        Idempotency
+        A closer look at API errors
       </a>
     </li>
   
@@ -572,18 +512,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../async/" class="md-nav__link">
-        Asynchronous operations
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -634,24 +562,25 @@
     
         <h1>Embedding Additional Entities in API Responses</h1>
     
-    <div class="md-source-date">
-        <small>
-            
-            Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits" class="timeago" datetime="2021-05-11 08:13:46 UTC">2021-05-11 08:13:46 UTC</a>
-            &nbsp;&nbsp;&nbsp;
-            ~13&nbsp;minute&nbsp;read
-            <br>
-            <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/embedding.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/embedding.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits">8&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
-            
-        </small>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
-    <script>timeago.render(document.querySelectorAll('.timeago'));</script>
-    <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+    
+        <div class="md-source-date">
+    <small>
+        
+        Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits" class="timeago" datetime="2021-05-11 08:13:46 UTC">2021-05-11 08:13:46 UTC</a>
+        &nbsp;&nbsp;&nbsp;
+        ~13&nbsp;minute&nbsp;read
+        <br>
+        <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/embedding.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/embedding.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits">8&nbsp;commits&nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
+        
+    </small>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+<script>timeago.render(document.querySelectorAll('.timeago'));</script>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The InvestSuite API supports optional embedding of entities by <code>EntityID</code>, a feature which is modeled after<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <a href="https://opensource.zalando.com/restful-api-guidelines/#158">Zalando's RESTful API Performance Guideline #158</a>. Embedding enables API clients to merge referenced entities directly into a single response, which reduces the amount of (sequential) round trips required to fetch data from InvestSuite's backend. This feature is particularly convenient in use cases where data from multiple entities is joined together, a common operation when preparing data for reporting purposes or in specific front end views.</p>
 <p>In order to embed certain field(s), the <code>?embed=</code> query string parameter needs to be provided in <code>GET</code> requests. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with an <code>_embedded</code> key at the root level, which contains a full rendition of the referenced entities (if the accessing user has read privileges on the referenced entity). This provides a useful level of flexibility in API responses, allowing clients to directly retrieve related data with a single request.</p>
 <div class="admonition hint">
@@ -951,6 +880,7 @@
 </li>
 </ol>
 </div>
+    
 
               
                 
@@ -968,7 +898,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../idempotency/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../errors/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -977,19 +907,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Idempotency
+              A closer look at API errors
             </div>
           </div>
         </a>
       
       
-        <a href="../async/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../changelog/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Asynchronous operations
+              Changelog
             </div>
           </div>
           <div class="md-footer__button md-icon">
