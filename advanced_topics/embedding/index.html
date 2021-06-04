@@ -565,16 +565,17 @@
     
         <div class="md-source-date">
     <small>
+        <hr style="margin:0.5rem 0rem;">
         
-        Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits" class="timeago" datetime="2021-05-11 08:13:46 UTC">2021-05-11 08:13:46 UTC</a>
+        Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits" class="timeago" datetime="2021-06-04 09:33:47 UTC">2021-06-04 09:33:47 UTC</a>
         &nbsp;&nbsp;&nbsp;
         ~13&nbsp;minute&nbsp;read
-        <br>
+        &nbsp;&nbsp;&nbsp;
         <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/advanced_topics/embedding.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
         &nbsp;&nbsp;&nbsp;
         <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/advanced_topics/embedding.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
         &nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits">8&nbsp;edits &nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
+        <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/advanced_topics/embedding.md" title="Show commits">9&nbsp;edits &nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
         
     </small>
 </div>
@@ -582,7 +583,7 @@
 <script>timeago.render(document.querySelectorAll('.timeago'));</script>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The InvestSuite API supports optional embedding of entities by <code>EntityID</code>, a feature which is modeled after<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <a href="https://opensource.zalando.com/restful-api-guidelines/#158">Zalando's RESTful API Performance Guideline #158</a>. Embedding enables API clients to merge referenced entities directly into a single response, which reduces the amount of (sequential) round trips required to fetch data from InvestSuite's backend. This feature is particularly convenient in use cases where data from multiple entities is joined together, a common operation when preparing data for reporting purposes or in specific front end views.</p>
-<p>In order to embed certain field(s), the <code>?embed=</code> query string parameter needs to be provided in <code>GET</code> requests. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with an <code>_embedded</code> key at the root level, which contains a full rendition of the referenced entities (if the accessing user has read privileges on the referenced entity). This provides a useful level of flexibility in API responses, allowing clients to directly retrieve related data with a single request.</p>
+<p>In order to embed certain field(s), the <code>?embed=</code> query string parameter needs to be provided in <code>GET</code> requests. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with a populated <code>_embedded</code> key at the root level, which contains a full rendition of the referenced entities. This provides a useful level of flexibility in API responses, allowing clients to directly retrieve related data with a single request.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Embedding works for any response field value that is an (array of) <code>EntityID</code>s, which can be recognized by the globally-unique identifier that follows below regex (such as a <code>UserID</code> like <code>U01234567890123456789012345</code>). This regex translates to a single alphabet letter identifying the type of entity, followed by a 26-character ULID based on the Crockford base32 character set.</p>
@@ -652,7 +653,7 @@
 <p class="admonition-title">Note</p>
 <p>In this example, unless the client already knows the <code>UserID</code> of the owner for this portfolio, the requests will by definition always be sequential because the required path parameter for the requests to <code>/users/</code> is not known until the first response is received.</p>
 </div>
-<p>With embedding, both requests can be rolled into a <strong>single operation</strong>, which adds the referenced entities to the <code>_embedded</code> key at the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced <code>EntityID</code>s and the value is the data for that entity (in this case a user object). The client can now directly parse the information for the <code>UserID</code> appearing in the <code>owned_by_used_id</code> field from the <code>_embedded</code> object without having to perform a subsequent request to <code>/users/</code>.</p>
+<p>With embedding, both requests can be rolled into a <strong>single operation</strong>, which adds the referenced entities to the <code>_embedded</code> key at the root of the response (see below). Note that this object contains a dictionary where the keys are the referenced <code>EntityID</code>s and the value is the data for that entity (in this case a <code>User</code> object). The client can now directly parse the information for the <code>UserID</code> appearing in the <code>owned_by_used_id</code> field from the <code>_embedded</code> object without having to perform a subsequent request to <code>/users/</code>.</p>
 <div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Request</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="hll"><span class="nf">GET</span> <span class="nn">/portfolios/P01234567890123456789012345?embed=owned_by_user_id</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </span><span class="na">Host</span><span class="o">:</span> <span class="l">api.investsuite.com</span>
@@ -701,7 +702,7 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The amount of 'work' required to retrieve data can be significantly reduced on both sides if embedding is used cleverly. In the above example, the number of requests required from the client is cut in half, which speeds up the interaction considerably. At the same time, API resources are used efficiently, as the amount of per-request overhead can be avoided.</p>
+<p>The amount of 'work' required to retrieve data can be significantly reduced on both sides if embedding is used cleverly. In the above example, the number of requests required from the client is cut in half, which speeds up the interaction considerably. At the same time, API resources are used efficiently, as per-request overhead can be avoided.</p>
 </div>
 <h2 id="multiple-embedded-entities">Multiple embedded entities<a class="headerlink" href="#multiple-embedded-entities" title="Permanent link">&para;</a></h2>
 <p>For the next example, assume that the client requires a portfolio, the owner of the portfolio, <em>and</em> the user that updated the portfolio most recently. This can be achieved by adding <strong>multiple response fields</strong> to the <code>embed=</code> param, separated by commas:</p>
@@ -754,7 +755,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this case, the referenced entity comes up twice: both as the owner of the portfolio and as the author of the most recent version. As a result, the <code>_embedded</code> object only contains a single object. This helps to further reduce repeated queries and unnecessary overhead.</p>
+<p>In this case, the referenced entity comes up twice: both as the owner of the portfolio and as the author of the most recent version. As a result, the <code>_embedded</code> object only contains a single object (no repeated keys). This helps to further reduce repeated queries and unnecessary overhead.</p>
 </div>
 <h2 id="embedding-with-collections">Embedding with collections<a class="headerlink" href="#embedding-with-collections" title="Permanent link">&para;</a></h2>
 <p>Similar to single-entity responses, collections support embedding as well. If embedding is requested, the <code>_embedded</code> object will contain referenced entities for <strong>all objects returned in the collection</strong>. For instance, a client can request a list of 10 portfolios and directly embed the owners of all these portfolios. This is particularly useful when creating front-end views or collecting data for reporting purposes where multiple entities need to be joined together in bulk. This process also reduces overhead on the server side: 1 query to retrieve portfolios, and 1 query to filter for the list of users is a lot more efficient than requesting these entities sequentially from the client side.</p>
@@ -864,7 +865,7 @@
 </div>
 <div class="admonition faq">
 <p class="admonition-title">What happens if the requesting user does not have access to the embedded entity?</p>
-<p>Read and write permissions are controlled by the <code>readable_by</code> and <code>modifiable_by</code> arrays on each entity respectively. If the requesting user does not have the right permissions (in this case, its ID is not in the <code>readable_by</code> list on the referenced entity), an error will be thrown. Note that the error references the <em>embedded entity</em>, which is another user in the below example. This could be slightly confusing when the original request was for a different entity such as a portfolio, but the error indicates lack of read access to a user.</p>
+<p>Read and write permissions are controlled by the <code>readable_by</code> and <code>modifiable_by</code> arrays on each entity respectively. If the requesting user does not have the right permissions (in this case, its ID is not in the <code>readable_by</code> list on the referenced entity), a standard <code>403 Forbidden</code>. Note that the error references the <em>embedded entity</em>, which is another user in the below example. This could be slightly confusing when the original request was for a different entity such as a portfolio, but the error indicates lack of read access to a user.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Access forbidden&quot;</span><span class="p">,</span>
     <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;User U01234567890123456789012345 does not have READ access on U98765432109876543210987654 (version=latest)&quot;</span><span class="p">,</span>
@@ -872,11 +873,21 @@
 <span class="p">}</span>
 </code></pre></div>
 </div>
+<div class="admonition faq">
+<p class="admonition-title">What happens if a reference to a deleted entity is embedded?</p>
+<p>Similar to the permission error above, when a reference to an entity is requested for embedding, but that entity is no longer available, a standard <code>404 Not Found</code> response is returned. Again, bear in mind that this error is specific to the <em>embedded entity</em>. It might for instance be possible to retrieve a portfolio instance, but if an embedded reference to the owner of that portfolio is a deleted object, the error will indicate this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Resource not found&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;Entity &#39;U01234567890123456789012345&#39; (version=0) not found for tenant &#39;example.com&#39;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>The Zalando guidelines include an example of embedding a <em>sub-resource</em> into the response. The InvestSuite API supports embedding of any referenced entity (which does not necessarily have to be a sub-resource of the requested entity).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>The Zalando guidelines include an example of embedding a <em>sub-resource</em> into the response. The InvestSuite API supports embedding of any referenced entity (which does not necessarily have to be a sub-resource of the requested entity). In addition, it is also possible to embed a list of referenced entities instead of a just single instance.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
