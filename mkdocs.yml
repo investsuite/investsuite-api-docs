@@ -74,10 +74,13 @@ plugins:
       lang: en
 
 nav:
-  - Get started: 
-    - Introduction: index.md
-    - First steps: get_started/first_steps.md
-    - Account opening: get_started/account_opening.md
+  - Home:
+    - About: index.md
+    - Get started: first_steps.md
+  - Common scenarios: 
+    - Create and manage users: common_scenarios/users.md
+    - Create and manage portfolios: common_scenarios/portfolios.md
+    - Retrieve instrument groups: common_scenarios/thematic_search.md
   - Advanced topics:
     - Next steps: advanced_topics/next_steps.md
     # - Data formats: advanced_topics/data_formats.md
