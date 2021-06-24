@@ -1,5 +1,5 @@
 # project information
-site_name: InvestSuite API Documentation
+site_name: InvestSuite API documentation
 site_url: https://api.investsuite.com/docs
 site_author: InvestSuite
 site_description: >-
@@ -75,11 +75,10 @@ plugins:
   - git-info
 
 nav:
-  - Home: index.md
-  - Getting Started:
-    - Introduction: getting_started/introduction.md
-    - First steps: getting_started/first_steps.md
-    - Creating and managing users: getting_started/users.md
+  - Home: 
+    - Introduction: index.md
+    - First steps: first_steps.md
+    - Creating and managing users: users.md
   - Advanced Topics:
     - Next steps: advanced_topics/next_steps.md
     # - Data formats: advanced_topics/data_formats.md

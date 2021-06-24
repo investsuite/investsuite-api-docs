@@ -1,1 +1,1 @@
-# InvestSuite API Documenation
+# InvestSuite API documentation
