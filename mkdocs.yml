@@ -72,14 +72,13 @@ markdown_extensions:
 plugins:
   - search:
       lang: en
-  - git-info
 
 nav:
-  - Home: 
+  - Get started: 
     - Introduction: index.md
-    - First steps: first_steps.md
-    - Creating and managing users: users.md
-  - Advanced Topics:
+    - First steps: get_started/first_steps.md
+    - Account opening: get_started/account_opening.md
+  - Advanced topics:
     - Next steps: advanced_topics/next_steps.md
     # - Data formats: advanced_topics/data_formats.md
     - Handling collection responses: advanced_topics/collections.md
@@ -89,8 +88,9 @@ nav:
     # - Idempotency: advanced_topics/idempotency.md
     - Embedding: advanced_topics/embedding.md
     # - Asynchronous operations: advanced_topics/async.md
-  - Changelog: changelog.md
-  - About: about.md
+  - API specification: "https://public-api.dev.investsuite.com/redoc"
+  - Release notes: changelog.md
+  # - About: about.md
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js
