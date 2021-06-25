@@ -2,9 +2,9 @@
 title: InvestSuite API
 ---
 
-Welcome to the InvestSuite API developer documentation. Glad you're integrating with InvestSuite. Before going further let's make sure you've come to the right place. These pages provide technical documentation to assist developers in working with our APIs. We assume you've determined with our specialists the type of integration you’d like to set up and are ready to dive right in.
+Welcome to the InvestSuite API developer documentation. Glad you're integrating with InvestSuite. 
 
-If not and instead you would like to know more about our products, get in touch with a team member; become a team member even? [Reach out and we will very quickly respond.](https://www.investsuite.com/contact) 
+Before going further let's make sure you've come to the right place. These pages provide technical documentation to assist developers in working with our APIs. We assume you've determined with our specialists the type of integration you’d like to set up and are ready to dive right in. If not and instead you would like to know more about our products, get in touch with a team member; become a team member even? [Reach out and we will very quickly respond.](https://www.investsuite.com/contact) 
 
 ## About this API
 

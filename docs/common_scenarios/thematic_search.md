@@ -6,16 +6,19 @@ title: Retrieve instrument groups
 
 The InvestSuite quant team composes and actively manages a list of themes (instrument groups) such as Healthcare, Clean & Green economy, Social trends each holding an applicable list of financial instruments. The aim of thematic search is to offer in the context of self execution, complementary to other search mechanisms, to your clients a means to filter the stock universe to their personal preference and view. To retrieve themes and selected instruments within them perform a `GET` request against the  `instrument_groups` endpoint.
 
+## Model
+
+Thematic search is based on a simple CRUD model. The entity `InstrumentGroups` aggregates 0..* `Instrument` objects. An InstrumentGroup is the category e.g. HealthCare and holds properties to describe the category: name, image, description. The `Instrument` object is a financial instrument, identified by an ISIN (external_id), and also holds properties to describe the instrument.
+
+![Screenshot](../img/instrument_groups_model.jpg)
+
 === "Request"
 
     ```HTTP hl_lines="1"
-    GET /instrument_groups HTTP/1.1
+    GET /instrument_groups 
         ?[limit=100]
-        &[embed=instrument_ids]
+        &[embed=instrument_ids] HTTP/1.1
     Host: public-api.uat.investsuite.com
-    Accept: application/json
-    Accept-Encoding: gzip, deflate
-    Connection: Keep-Alive
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJ...
     ```
 

@@ -82,18 +82,19 @@ nav:
     - Create and manage portfolios: common_scenarios/portfolios.md
     - Retrieve instrument groups: common_scenarios/thematic_search.md
   - Advanced topics:
-    - Next steps: advanced_topics/next_steps.md
+    - Handling collection responses: advanced_topics/collections.md # Search
+    - A closer look at API errors : advanced_topics/errors.md # 422 responses, permissions
+    - Embedding: advanced_topics/embedding.md
+    # - Search
+    # - Identifiers
+    # - Policies
+    # - Versioning
     # - Data formats: advanced_topics/data_formats.md
-    - Handling collection responses: advanced_topics/collections.md
-    - A closer look at API errors : advanced_topics/errors.md
-    # - Debugging tips and tricks: advanced_topics/debugging.md
     # - Rate limiting: advanced_topics/rate_limiting.md
     # - Idempotency: advanced_topics/idempotency.md
-    - Embedding: advanced_topics/embedding.md
     # - Asynchronous operations: advanced_topics/async.md
   - API specification: "https://public-api.dev.investsuite.com/redoc"
   - Release notes: changelog.md
-  # - About: about.md
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js

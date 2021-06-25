@@ -2,7 +2,7 @@
 title: Authentication
 ---
 
-Authenticate against the API to receive a JSON Web Token (JWT). Learn more about JWT at [jwt.io](https://jwt.io). 
+Authenticate against the API to receive a JSON Web Token (JWT). Learn more about JWT at [jwt.io](https://jwt.io). To authenticate you need an access key and a secret. Reach out to your InvestSuite representative and we will set you up in no time.
 
 !!! Warning
     Requests should not be directly sent from your app or website, as your authentication data may be exposed in transit. All requests are required to be made via an HTTPS connection; requests made over plain HTTP will fail.
