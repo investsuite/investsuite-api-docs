@@ -13,18 +13,18 @@
         <meta name="author" content="InvestSuite">
       
       
-        <link rel="canonical" href="https://api.investsuite.com/docs/getting_started/users/">
+        <link rel="canonical" href="https://api.investsuite.com/docs/common_scenarios/thematic_search/">
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Managing users and user groups - InvestSuite API Documentation</title>
+        <title>Retrieve instrument groups - InvestSuite API documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -46,6 +46,8 @@
     
     
       
+
+
     
     
 
@@ -53,9 +55,9 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="InvestSuite API Documentation - Creating and managing users">
+<meta property="og:title" content="InvestSuite API documentation - Retrieve instrument groups">
 <meta property="og:description" content="The InvestSuite API is the one-stop shop for integrations with InvestSuite's range of invest-tech solutions. These pages provide technical documentation to assist developers working with our APIs.">
-<meta property="og:url" content="https://api.investsuite.com/docs/getting_started/users/">
+<meta property="og:url" content="https://api.investsuite.com/docs/common_scenarios/thematic_search/">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
 
   </head>
@@ -77,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#users" class="md-skip">
+        <a href="#thematic-search" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="InvestSuite API Documentation" class="md-header__button md-logo" aria-label="InvestSuite API Documentation" data-md-component="logo">
+    <a href="../.." title="InvestSuite API documentation" class="md-header__button md-logo" aria-label="InvestSuite API documentation" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
@@ -100,13 +102,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            InvestSuite API Documentation
+            InvestSuite API documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Managing users and user groups
+              Retrieve instrument groups
             
           </span>
         </div>
@@ -176,11 +178,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      Home
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
 
       
         
@@ -194,8 +200,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../introduction/" class="md-tabs__link md-tabs__link--active">
-        Getting Started
+      <a href="../users/" class="md-tabs__link md-tabs__link--active">
+        Common scenarios
       </a>
     </li>
   
@@ -210,8 +216,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../advanced_topics/next_steps/" class="md-tabs__link">
-        Advanced Topics
+      <a href="../../advanced_topics/collections/" class="md-tabs__link">
+        Advanced topics
       </a>
     </li>
   
@@ -223,8 +229,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../changelog/" class="md-tabs__link">
-      Changelog
+    <a href="https://public-api.dev.investsuite.com/redoc" class="md-tabs__link">
+      API specification
     </a>
   </li>
 
@@ -235,8 +241,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../about/" class="md-tabs__link">
-      About
+    <a href="../../changelog/" class="md-tabs__link">
+      Release notes
     </a>
   </li>
 
@@ -263,12 +269,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="InvestSuite API Documentation" class="md-nav__button md-logo" aria-label="InvestSuite API Documentation" data-md-component="logo">
+    <a href="../.." title="InvestSuite API documentation" class="md-nav__button md-logo" aria-label="InvestSuite API documentation" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
     </a>
-    InvestSuite API Documentation
+    InvestSuite API documentation
   </label>
   
     <div class="md-nav__source">
@@ -293,10 +299,49 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        About
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../first_steps/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -317,13 +362,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
-        Getting Started
+        Common scenarios
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+      <nav class="md-nav" aria-label="Common scenarios" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Getting Started
+          Common scenarios
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -332,8 +377,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
-        Introduction
+      <a href="../users/" class="md-nav__link">
+        Create and manage users
       </a>
     </li>
   
@@ -344,8 +389,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../first_steps/" class="md-nav__link">
-        First steps
+      <a href="../portfolios/" class="md-nav__link">
+        Create and manage portfolios
       </a>
     </li>
   
@@ -364,12 +409,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Creating and managing users
+          Retrieve instrument groups
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Creating and managing users
+        Retrieve instrument groups
       </a>
       
         
@@ -385,8 +430,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#users" class="md-nav__link">
-    Users
+  <a href="#thematic-search" class="md-nav__link">
+    Thematic search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding" class="md-nav__link">
+    Embedding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
   </a>
   
 </li>
@@ -419,27 +485,15 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
-        Advanced Topics
+        Advanced topics
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Advanced Topics" data-md-level="1">
+      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Advanced Topics
+          Advanced topics
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advanced_topics/next_steps/" class="md-nav__link">
-        Next steps
-      </a>
-    </li>
-  
-
           
             
   
@@ -491,8 +545,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
-        Changelog
+      <a href="https://public-api.dev.investsuite.com/redoc" class="md-nav__link">
+        API specification
       </a>
     </li>
   
@@ -506,8 +560,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
-        About
+      <a href="../../changelog/" class="md-nav__link">
+        Release notes
       </a>
     </li>
   
@@ -524,29 +578,94 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-    
-        <h1>Managing users and user groups</h1>
-    
-    
-        <div class="md-source-date">
+    <h1>Retrieve instrument groups</h1>
+    <div class="md-source-date">
     <small>
         <hr style="margin:0.5rem 0rem;">
-        
-        Last update: <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/getting_started/users.md" title="Show commits" class="timeago" datetime="2021-06-02 14:16:38 UTC">2021-06-02 14:16:38 UTC</a>
-        &nbsp;&nbsp;&nbsp;
-        ~1&nbsp;minute&nbsp;read
-        &nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/investsuite/investsuite-api-docs/blob/master/docs/getting_started/users.md" title="Make a contribution on GitHub!">Edit&nbsp;on&nbsp;GitHub&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/investsuite/investsuite-api-docs/blame/master/docs/getting_started/users.md" title="Show blame">1&nbsp;author&nbsp;<i class="fab fa-github" aria-hidden="true"></i></a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/investsuite/investsuite-api-docs/commits/master/docs/getting_started/users.md" title="Show commits">2&nbsp;edits &nbsp;<i class="far fa-file-alt" aria-hidden="true"></i></a>
         
     </small>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 <script>timeago.render(document.querySelectorAll('.timeago'));</script>
-<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<h2 id="thematic-search">Thematic search<a class="headerlink" href="#thematic-search" title="Permanent link">&para;</a></h2>
+<p>The InvestSuite quant team composes and actively manages a list of themes (instrument groups) such as Healthcare, Clean &amp; Green economy, Social trends each holding an applicable list of financial instruments. The aim of thematic search is to offer in the context of self execution, complementary to other search mechanisms, to your clients a means to filter the stock universe to their personal preference and view. To retrieve themes and selected instruments within them perform a <code>GET</code> request against the  <code>instrument_groups</code> endpoint.</p>
+<h2 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h2>
+<p>Thematic search is based on a simple CRUD model. The entity <code>InstrumentGroups</code> aggregates 0..* <code>Instrument</code> objects. An InstrumentGroup is the category e.g. HealthCare and holds properties to describe the category: name, image, description. The <code>Instrument</code> object is a financial instrument, identified by an ISIN (external_id), and also holds properties to describe the instrument.</p>
+<p><img alt="Screenshot" src="../../img/instrument_groups_model.jpg" /></p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Request</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="err">GET /instrument_groups </span>
+</span><span class="err">    ?[limit=100]</span>
+<span class="err">    &amp;[embed=instrument_ids] HTTP/1.1</span>
+<span class="err">Host: public-api.uat.investsuite.com</span>
+<span class="err">Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJ...</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Response (body)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;unique_external_entity_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;UXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+            <span class="p">],</span>
+<span class="hll">            <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span>                <span class="s2">&quot;UXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;J01F3MQ2DPYXPS7JTHGXX4D09D3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;creation_datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-04-19T00:00:00+00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;version_datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-04-19T09:23:34.238210+00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;version_authored_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;UXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;en-US&quot;</span><span class="p">:</span> <span class="s2">&quot;Cloud Computing&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;en-US&quot;</span><span class="p">:</span> <span class="s2">&quot;Digital Disruption&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;image_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;urn:ietf:rfc:2648&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;en-US&quot;</span><span class="p">:</span> <span class="s2">&quot;Cloud Computing is the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power.&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;instrument_ids&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;I01F3MPZ53PNXBQVTKZNKJ88RA3&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;I01F3MPZ53PNXBQVTKZNKJ88RA3&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;external_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US0378331005&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;readable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;UXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;modifiable_by&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;UXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Appel BV. Ordinary Shares&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Appel BV&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;STOCK&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;image_uri&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;I01F3MPZ53PNXBQVTKZNKJ88RA3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;creation_datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-04-19T00:00:00+00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;version_datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-04-19T09:21:47.127958+00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;version_authored_by_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;UXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;_embedded&quot;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="embedding">Embedding<a class="headerlink" href="#embedding" title="Permanent link">&para;</a></h2>
+<p>You can add details about the <code>Instrument</code> objects to the <code>InstrumentGroup</code> objects collection by providing the <code>?embed=query</code> query string parameter. This parameter can be set to one or more field names that are available in the response object (and are references to other entities). The response will be extended with a populated _embedded key at the root level, which contains a full rendition of the referenced entities.</p>
+<h2 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h2>
+<p>Collections are paginated lists of entities. To request a collection issue a <code>GET</code> request against the entity root path e.g. <code>GET /users</code>, <code>GET /portfolios</code>, <code>GET /instrument_groups</code>. Collection endpoints accept alongside the <code>embed</code> query parameter take two parameters: limit and offset. Limit (<code>limit=50</code>) allows you to pass in the number of items to be returned in the results array of the response. The default collection response size is <code>20 items</code>. The maximum size is 100. </p>
     
 
               
@@ -565,7 +684,8 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../first_steps/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../portfolios/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Create and manage portfolios" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -574,19 +694,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              First steps
+              Create and manage portfolios
             </div>
           </div>
         </a>
       
       
-        <a href="../../advanced_topics/next_steps/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../../advanced_topics/collections/" class="md-footer__link md-footer__link--next" aria-label="Next: Handling collection responses" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Next steps
+              Handling collection responses
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -665,10 +786,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
       
