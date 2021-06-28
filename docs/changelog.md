@@ -11,7 +11,7 @@ The current and past members of the InvestSuite team.
 
 ## v2 (2021-06-24)
 
-For InvestSuite API v 0.1.0
+For InvestSuite API v0.1.0
 
 * Add Introduction page
 * Add Get started: authentication
@@ -19,7 +19,7 @@ For InvestSuite API v 0.1.0
 
 ## v1 (2021-04-08)
 
-For InvestSuite API v 0.1.0
+For InvestSuite API v0.1.0
 
 * Scaffolding InvestSuite API documentation
 * Add "Embedding" article

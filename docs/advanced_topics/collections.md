@@ -129,10 +129,10 @@ Collection endpoints accept alongside the `embed` query parameter two parameters
 
 Parameter | Description
 --------- | -----------
-limit     | Example: `limit=50`) Aallows you to pass in the number of items to be returned in the results array of the response. The default collection response size is `20 items`. The maximum size is 100.
+limit     | Example: `limit=50`) Allows you to pass in the number of items to be returned in the results array of the response. The default collection response size is `20 items`. The maximum size is 100.
 offset    |  Example `offset=50` To be used in combination with the `limit` parameter, the offset defines the number of records that need to be skipped.
 embed     | Example: `embed=field_name_1,field_name_2` Optional comma-separated list of field names for which the referenced entity is to be included in the _embedded object of the response. See [Embedding](embedding.md).
-search    | Example: `query=email+eq+'jane.doe@example.com` See below
+search    | Example: `query=email+eq+'jane.doe@example.com` See below.
 
 ## Search
 
@@ -149,52 +149,33 @@ The API provides a structural search and filtering mechanism for all entities. W
 
 ### Fundamental rules
 
-- Each entity can be queried by issuing a `GET` request e.g. `GET users/?query=email+eq+'jane*'`.
-- Spaces are substituted with a plus sign ( + ) because space is not a valid character in an URL.
-- String and date literals are always enclosed in single-quotes. 
-- Spaces in a string literal are also denoted with a plus sign ( + ).
-- If you need the plus sign in a string literal, just escape it with a backslash like email+eq+'*luk\\+*'.
+- Every entity type can be queried by issuing a `GET` request e.g. `GET users/?query=email+eq+'jane*'`.
+- The query string must be URL encoded. This implies that spaces would be transformed to `%20`, but for improved legibility we recommend using `+` instead
 
 ### Operators
 
-Number Operators
-
-- Exact match (e.g. `age+eq+1`)
-- LT (less than) (e.g. `age+lt+18`)
-- LTE (less than or equal) (e.g. `age+le+18`)
-- GT (greater than) (e.g. `age+gt+18`)
-- GTE (greater than or equal) (e.g. `age+ge+18`)
-
-String Operators
-
-- Exact match (e.g. email+eq+'kristof.leroux@investsuite.com')
-- Prefix search (starts with) (e.g. email+eq+kristof*')
-- Postfix search (ends with)  (e.g. email+eq+'*gmail.com')
-- LIKE matching (contains) (e.g. email+eq+'*gmail*')
-
-Date Operators
-
-- Exact match (e.g. `last_modified+eq+'2020-09-11T09:03:53.721588+00:00'`) (with or without time, with or without timezone)
-- RANGE (is in range) for dates 
-    - without time (e.g. `lastmodified+in+['20200101'+to+'20210101']`)
-    - with time (e.g. `lastmodified+in+['2020-09-11T09:03:53.721588'+to+'2020-11-11T09:03:53.721588']`)
-    - with timezone (e.g. `lastmodified+in+['2020-09-11T09:03:53.721588+00:00'+to+'2020-11-11T09:03:53.721588+00:00']`)
-
-Boolean Operators
-
-- Boolean Queries (e.g. `archived+eq+true`)
-
-List Operators
-
-- IN (element of) (e.g `field+in+['value1',+'value2',+'value3']`)
-
-Logical Operators:
-
-- AND (e.g. `email+eq+kristof+and+age+gt+18`)
+Operator type | Operator  | Example
+--- | --- | ---
+Number operator  | Exact match | `age eq 1`
+Number operator  | Less than | `age lt 18`
+Number operator  | Less than or equal | `age le 18`
+Number operator  | Greater than | `age gt 18`
+Number operator  | Greater than or equal | `age ge 18`
+String operator  | Exact match | `email eq 'jane.doe@example.com'`
+String operator  | Prefix search | `email eq john*`
+String operator  | Postfix search | `email eq '*gmail.com'`
+String operator  | `LIKE` matching | `email eq '*gmail*'`
+Date operator    | Exact match | `last_modified eq '2020-09-11T09:03:53.721588+00:00'`
+Date operator    | Is in range for dates without time | `lastmodified in ['20200101' to '20210101']`
+Date operator    | Is in range for dates with time | `lastmodified in ['2020-09-11T09:03:53.721588' to '2020-11-11T09:03:53.721588']`
+Date operator    | Is in range for dates with timeezonr | `lastmodified in ['2020-09-11T09:03:53.721588+00:00' to '2020-11-11T09:03:53.721588+00:00']`
+Boolean operator | Boolean queries | `archived eq true`
+List operator    | `IN` (element of) | `field in ['value1', 'value2', 'value3']`
+Logical operator | `AND`, `OR` | `email eq kristof and age gt 18`
 
 !!! Hint
-    You combine operators in all possible compositions e.g. `email+eq+'*tom*'+and+firstname+in+[’tom',+‘thomas’]`.
-
+    You combine operator
+     in all possible compositions e.g. `email+eq+'*tom*'+and+firstname+in+[’tom',+‘thomas’]`.
 ### Sorting
 
 The sorting operator always comes as the last term, except when there is a selection term which is always at the very last:

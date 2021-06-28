@@ -76,7 +76,7 @@ plugins:
 nav:
   - Home:
     - About: index.md
-    - Get started: first_steps.md
+    - Authentication: first_steps.md
   - Common scenarios: 
     - Create and manage users: common_scenarios/users.md
     - Create and manage portfolios: common_scenarios/portfolios.md

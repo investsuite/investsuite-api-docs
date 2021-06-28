@@ -166,11 +166,7 @@ Add the InvestSuite ID to the path to retrieve a portfolio object.
 
 ## Search
 
-You can query each entity through a general endpoint e.g. `GET portfolios/?query=…`. General rules:
-
-* Spaces are substituted with a plus sign ( + ) because space is not a valid character in an URL.
-* String and date literals are always enclosed in single-quotes. Spaces in a string literal are also denoted with a plus sign ( + ).
-* If you need the plus sign in a string literal, just escape it with a backslash like `email+eq+'*john\\+*'`.
+You can query each entity through a general endpoint e.g. `GET portfolios/?query=…`. Learn more in the [Handling collection responses](/advanced_topics/collections/) section.
 
 === "Request"
 
